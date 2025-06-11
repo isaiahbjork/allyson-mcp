@@ -1,7 +1,7 @@
-# @allyson/mcp
+# allyson-mcp
 
-[![npm version](https://badge.fury.io/js/%40allyson%2Fmcp.svg)](https://badge.fury.io/js/%40allyson%2Fmcp)
-[![Node.js Version](https://img.shields.io/node/v/@allyson/mcp.svg)](https://nodejs.org)
+[![npm version](https://badge.fury.io/js/allyson-mcp.svg)](https://badge.fury.io/js/allyson-mcp)
+[![Node.js Version](https://img.shields.io/node/v/allyson-mcp.svg)](https://nodejs.org)
 
 **Allyson MCP Server** - AI-powered animation generator that transforms static files into animated SVG components using the Model Context Protocol (MCP).
 
@@ -10,21 +10,21 @@
 ### Install and Run with npx
 
 ```bash
-npx @allyson/mcp --api-key YOUR_API_KEY
+npx allyson-mcp --api-key YOUR_API_KEY
 ```
 
 ### Install Globally
 
 ```bash
-npm install -g @allyson/mcp
+npm install -g allyson-mcp
 allyson-mcp --api-key YOUR_API_KEY
 ```
 
 ### Local Installation
 
 ```bash
-npm install @allyson/mcp
-node node_modules/@allyson/mcp/index.js --api-key YOUR_API_KEY
+npm install allyson-mcp
+node node_modules/allyson-mcp/index.js --api-key YOUR_API_KEY
 ```
 
 ## 🔧 Configuration
@@ -105,7 +105,7 @@ This MCP server is designed to work with AI assistants that support the Model Co
   "mcpServers": {
     "allyson": {
       "command": "npx",
-      "args": ["@allyson/mcp", "--api-key", "YOUR_API_KEY"]
+      "args": ["allyson-mcp", "--api-key", "YOUR_API_KEY"]
     }
   }
 }
@@ -166,7 +166,7 @@ export API_KEY=YOUR_KEY && allyson-mcp
 **Permission Issues**
 ```bash
 # Make the file executable if needed
-chmod +x node_modules/@allyson/mcp/index.js
+chmod +x node_modules/allyson-mcp/index.js
 ```
 
 ### Debug Mode
