@@ -1,6 +1,6 @@
 {
   "name": "allyson-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allyson MCP Server - AI-powered SVG animation generator that transforms static files into animated SVG components using Framer Motion",
   "main": "index.js",
   "type": "module",
