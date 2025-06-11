@@ -15,7 +15,7 @@ import { basename } from 'path';
 class AllysonMCPServer {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseUrl = "http://allyson.ai/api";
+    this.baseUrl = "https://allyson.ai/api";
     this.server = new Server(
       {
         name: "allyson-mcp-server",
