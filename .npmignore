@@ -1,9 +1,13 @@
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
 # Development files
 .git/
 .DS_Store
 *.log
-.env
-.env.local
 
 # Testing
 test/
@@ -20,4 +24,7 @@ node_modules/
 
 # OS files
 Thumbs.db
-Desktop.ini 
+Desktop.ini
+
+# Git files
+.gitignore 

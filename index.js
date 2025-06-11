@@ -15,11 +15,14 @@ import { basename } from 'path';
 class AllysonMCPServer {
   constructor(apiKey) {
     this.apiKey = apiKey;
-    this.baseUrl = "https://allyson.ai/api";
+    // Use localhost for development, production domain otherwise
+    this.baseUrl = process.env.NODE_ENV === 'development' 
+      ? "http://localhost:3001/api" 
+      : "https://allyson.ai/api";
     this.server = new Server(
       {
         name: "allyson-mcp-server",
-        version: "1.0.0",
+        version: "1.0.2",
       },
       {
         capabilities: {
