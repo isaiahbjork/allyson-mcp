@@ -1,0 +1,57 @@
+{
+  "name": "@allyson/mcp",
+  "version": "1.0.0",
+  "description": "Allyson MCP Server - AI-powered SVG animation generator that transforms static files into animated SVG components using Framer Motion",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "allyson-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js",
+    "test": "node index.js --help"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "node-fetch": "^3.3.0",
+    "form-data": "^4.0.0"
+  },
+  "keywords": [
+    "mcp", 
+    "server", 
+    "api", 
+    "proxy", 
+    "animation", 
+    "svg", 
+    "framer-motion",
+    "ai", 
+    "allyson",
+    "model-context-protocol"
+  ],
+  "author": "Allyson",
+  "website": "https://allyson.ai",
+  "contributors": [
+    {
+      "name": "Allyson",
+      "email": "info@allyson.com",
+      "url": "https://allyson.ai"
+    }
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allyson/mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/allyson/mcp/issues"
+  },
+  "homepage": "https://github.com/allyson/mcp#readme",
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+} 

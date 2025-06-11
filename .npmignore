@@ -1,0 +1,23 @@
+# Development files
+.git/
+.DS_Store
+*.log
+.env
+.env.local
+
+# Testing
+test/
+tests/
+__tests__/
+coverage/
+
+# Development dependencies
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+Desktop.ini 
