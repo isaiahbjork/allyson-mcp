@@ -14,20 +14,6 @@
 npx allyson-mcp --api-key YOUR_API_KEY
 ```
 
-### Install Globally
-
-```bash
-npm install -g allyson-mcp
-allyson-mcp --api-key YOUR_API_KEY
-```
-
-### Local Installation
-
-```bash
-npm install allyson-mcp
-node node_modules/allyson-mcp/index.js --api-key YOUR_API_KEY
-```
-
 ## 🔧 Configuration
 
 ### Command Line Options
