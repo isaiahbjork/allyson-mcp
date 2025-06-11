@@ -1,4 +1,4 @@
-# allyson-mcp
+# Allyson MCP Server
 
 [![npm version](https://badge.fury.io/js/allyson-mcp.svg)](https://badge.fury.io/js/allyson-mcp)
 [![Node.js Version](https://img.shields.io/node/v/allyson-mcp.svg)](https://nodejs.org)
@@ -6,6 +6,7 @@
 **Allyson MCP Server** - AI-powered animation generator that transforms static files into animated SVG components using the Model Context Protocol (MCP).
 
 ## 🚀 Quick Start
+[![Install MCP Server](https://cursor.com/deeplink/mcp-install-light.svg)](https://cursor.com/install-mcp?name=allyson&config=eyJjb21tYW5kIjoibnB4IGFsbHlzb24tbWNwIC0tYXBpLWtleSBZT1VSX0FQSV9LRVkifQ%3D%3D)
 
 ### Install and Run with npx
 
