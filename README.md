@@ -111,14 +111,6 @@ allyson-mcp --api-key your-api-key
 # File: /Users/john/logo.png → /Users/john/animated-logo.tsx
 ```
 
-### Advanced Animation Prompts
-
-- **Character Animation**: "Make the character in the image wave their hand and smile"
-- **Logo Effects**: "Add a subtle pulsing glow effect to the logo"
-- **Icon Interactions**: "Create a hover effect where the icon scales up slightly"
-- **Decorative Elements**: "Make the stars in the background twinkle"
-- **Loading Animations**: "Transform this spinner into a smooth rotating animation"
-
 ## 🔐 Security
 
 - **API Key Protection**: Your API key is securely transmitted to the Allyson service
