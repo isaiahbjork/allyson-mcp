@@ -5,6 +5,10 @@
 
 **Allyson MCP Server** - AI-powered animation generator that transforms static files into animated SVG components using the Model Context Protocol (MCP).
 
+<a href="https://glama.ai/mcp/servers/@isaiahbjork/allyson-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@isaiahbjork/allyson-mcp/badge" alt="Allyson Server MCP server" />
+</a>
+
 ## 🚀 Quick Start
 [![Install MCP Server](https://cursor.com/deeplink/mcp-install-light.svg)](https://cursor.com/install-mcp?name=allyson&config=eyJjb21tYW5kIjoibnB4IGFsbHlzb24tbWNwIC0tYXBpLWtleSBZT1VSX0FQSV9LRVkifQ%3D%3D)
 
