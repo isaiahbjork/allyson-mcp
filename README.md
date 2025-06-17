@@ -168,7 +168,7 @@ We welcome contributions! Please see our contributing guidelines for more detail
 
 ## 📄 License
 
-MIT License - see LICENSE file for details.
+Apache-2.0 License - see LICENSE file for details.
 
 ## 🔗 Links
 
