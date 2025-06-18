@@ -183,4 +183,3 @@ Apache-2.0 License - see LICENSE file for details.
 
 - **Documentation**: Check this README and inline help (`--help`)
 - **Issues**: Report bugs on our [GitHub Issues](https://github.com/allyson/mcp/issues)
-- **API Support**: Contact Allyson support for API-related questions
