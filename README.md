@@ -64,7 +64,6 @@ Generates an animated SVG component from a source file and animation prompt.
   - Example: "Add bouncing motion to the ball"
   - Example: "Create a spinning effect for the logo"
 - `svg_path` (string, required): Absolute path to the source file
-  - Example: "/Users/username/image.png"
   - Example: "/path/to/my-icon.svg"
 - `output_path` (string, required): Absolute path where to save the animated component
   - Example: "/path/to/animated-component.tsx"
