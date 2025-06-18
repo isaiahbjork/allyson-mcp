@@ -63,7 +63,7 @@ class AllysonMCPServer {
                 },
                 svg_path: {
                   type: "string",
-                  description: "Local file path to the source file to animate, must be the absolute path (e.g., '/Users/username/image.png')"
+                  description: "Local file path to the source file to animate, must be the absolute path (e.g., '/Users/username/image.svg')"
                 },
                 output_path: {
                     type: "string",
