@@ -111,7 +111,7 @@ allyson-mcp --api-key your-api-key
 
 # The AI assistant can now use the tool:
 # "Please animate this logo to have a subtle glow effect"
-# File: /Users/john/logo.png → /Users/john/animated-logo.tsx
+# File: /Users/john/logo.svg → /Users/john/animated-logo.tsx
 ```
 
 ## 🔐 Security
