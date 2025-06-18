@@ -27,4 +27,12 @@ Thumbs.db
 Desktop.ini
 
 # Git files
-.gitignore 
+.gitignore
+
+# CI/CD files
+.github/
+CONTRIBUTING.md
+
+# Documentation (keep README.md)
+*.md
+!README.md 

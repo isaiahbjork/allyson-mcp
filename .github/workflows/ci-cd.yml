@@ -1,0 +1,117 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Lint code
+        run: npm run lint || echo "No lint script found, skipping..."
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Determine version bump
+        id: version
+        run: |
+          # Get the latest commit message
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MSG"
+          
+          # Determine version bump type based on conventional commits
+          if [[ $COMMIT_MSG =~ ^feat(\(.+\))?!: ]] || [[ $COMMIT_MSG =~ BREAKING\ CHANGE ]]; then
+            echo "bump=major" >> $GITHUB_OUTPUT
+            echo "Version bump: major (breaking change)"
+          elif [[ $COMMIT_MSG =~ ^feat(\(.+\))?: ]]; then
+            echo "bump=minor" >> $GITHUB_OUTPUT
+            echo "Version bump: minor (new feature)"
+          elif [[ $COMMIT_MSG =~ ^fix(\(.+\))?: ]] || [[ $COMMIT_MSG =~ ^patch(\(.+\))?: ]]; then
+            echo "bump=patch" >> $GITHUB_OUTPUT
+            echo "Version bump: patch (bug fix)"
+          else
+            echo "bump=patch" >> $GITHUB_OUTPUT
+            echo "Version bump: patch (default)"
+          fi
+
+      - name: Bump version
+        run: |
+          npm version ${{ steps.version.outputs.bump }} --no-git-tag-version
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "New version: $NEW_VERSION"
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Commit version bump
+        run: |
+          git add package.json package-lock.json
+          git commit -m "chore: bump version to ${{ env.NEW_VERSION }} [skip ci]"
+          git tag "v${{ env.NEW_VERSION }}"
+
+      - name: Push changes
+        run: |
+          git push origin main
+          git push origin "v${{ env.NEW_VERSION }}"
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v${{ env.NEW_VERSION }}"
+          release_name: "Release v${{ env.NEW_VERSION }}"
+          body: |
+            ## Changes in v${{ env.NEW_VERSION }}
+            
+            Auto-generated release from commit: ${{ github.event.head_commit.message }}
+            
+            **Full Changelog**: https://github.com/${{ github.repository }}/compare/v${{ env.PREVIOUS_VERSION }}...v${{ env.NEW_VERSION }}
+          draft: false
+          prerelease: false 

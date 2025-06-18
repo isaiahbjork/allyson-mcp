@@ -10,7 +10,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node index.js",
-    "test": "node index.js --help"
+    "test": "node index.js --help",
+    "lint": "echo 'No linting configured yet'",
+    "prepublishOnly": "npm test",
+    "version": "git add .",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.6.0",
